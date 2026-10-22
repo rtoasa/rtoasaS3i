@@ -3,9 +3,26 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="rtoasaS3i.Views.vLogin"
              Title="vLogin">
+
+    <ContentPage.Resources>
+        <Style x:Key="styleLabel" TargetType="Label">
+            <Setter Property="FontSize" Value="18"/>
+            <Setter Property="BackgroundColor" Value="DarkViolet"/>
+            <Setter Property="TextColor" Value="Blue"/>
+            <Setter Property="HorizontalTextAlignment" Value="Center"/>
+        </Style>
+
+        <Style x:Key="styleEntry" TargetType="Entry">
+            <Setter Property="Background" Value="Beige"/>
+            <Setter Property="TextColor" Value="Blue"/>
+            <Setter Property="FontSize" Value="16"/>
+        </Style>
+        
+    </ContentPage.Resources>
+    
     <VerticalStackLayout
         Padding="20"
-        Spacing="15">
+        Spacing="15" BackgroundColor="Yellow">
         <Label 
             Text="INICIO DE SESIÓN"
             FontSize="20"
@@ -35,30 +52,34 @@
             </Grid.ColumnDefinitions>
 
             <Label Text="Usuario:"
-                  FontSize="18"
+                   Style="{StaticResource styleLabel}"                  
                    Grid.Row="0"
                    Grid.Column="0"/>
             <Entry x:Name="txtUsuario"
+                   Style="{StaticResource styleEntry}"
                    Placeholder="Ingresa el usuario"
                    Grid.Row="0"
                    Grid.Column="1"/>
 
 
             <Label Text="Contraseña:"
-                   FontSize="18"
+                   Style="{StaticResource styleLabel}"           
                    Grid.Row="1"
                    Grid.Column="0"/>
             <Entry x:Name="txtcontrasena"
+                   Style="{StaticResource styleEntry}"
                    Placeholder="Ingresa la contraseña"
                    IsPassword="True"
                    Grid.Row="1"
                    Grid.Column="1"/>
             <Button x:Name="btnIniciarSesion"
+                    Style="{StaticResource BotonGlobal}"
                     Text="Iniciar sesión"
                     Clicked="btnIniciarSesion_Clicked"
                     Grid.Row="2"
                     Grid.Column="0"/>
             <Button x:Name="btnRegistrarUsuario"
+                       Style="{StaticResource BotonGlobal}"
                     Text="Registrar Usuario"
                     Clicked="btnRegistrarUsuario_Clicked"
                     Grid.Row="2"
